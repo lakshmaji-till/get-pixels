@@ -3,7 +3,7 @@
 var ndarray       = require('ndarray')
 var PNG           = require('pngjs').PNG
 var jpeg          = require('jpeg-js')
-var fs            = require('fs')
+// var fs            = require('fs')
 var request       = require('request')
 var mime          = require('mime-types')
 var parseDataURI  = require('parse-data-uri')
@@ -105,18 +105,19 @@ module.exports = function getPixels(url, type, cb) {
       }
       doParse(type, body, cb)
     })
-  } else {
-    fs.readFile(url, function(err, data) {
-      if(err) {
-        cb(err)
-        return
-      }
-      type = type || mime.lookup(url)
-      if(!type) {
-        cb(new Error('Invalid file type'))
-        return
-      }
-      doParse(type, data, cb)
-    })
   }
+  //  else {
+  //   fs.readFile(url, function(err, data) {
+  //     if(err) {
+  //       cb(err)
+  //       return
+  //     }
+  //     type = type || mime.lookup(url)
+  //     if(!type) {
+  //       cb(new Error('Invalid file type'))
+  //       return
+  //     }
+  //     doParse(type, data, cb)
+  //   })
+  // }
 }
