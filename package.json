@@ -49,7 +49,6 @@
     "node",
     "browserify"
   ],
-  "browser": "dom-pixels.js",
   "author": "Mikola Lysenko",
   "license": "MIT",
   "readmeFilename": "README.md",
