@@ -7,6 +7,7 @@ var jpeg = require("jpeg-js");
 // var request = require("request");
 var mime = require("mime-types");
 var parseDataURI = require("parse-data-uri");
+var fetch = require("node-fetch");
 
 function handlePNG(data, cb) {
   var png = new PNG();
