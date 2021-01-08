@@ -7,6 +7,7 @@
     "test": "test"
   },
   "dependencies": {
+    "blob-to-buffer": "^1.2.9",
     "cross-fetch": "^3.0.6",
     "data-uri-to-buffer": "0.0.3",
     "jpeg-js": "^0.3.2",
