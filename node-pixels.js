@@ -8,7 +8,7 @@ var jpeg = require("jpeg-js");
 var mime = require("mime-types");
 var parseDataURI = require("parse-data-uri");
 var nodeFetch = require("cross-fetch");
-global.Buffer = global.Buffer || require('buffer').Buffer
+var Buffer= require('buffer').Buffer
 
 
 function handlePNG(data, cb) {
