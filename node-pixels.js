@@ -8,7 +8,6 @@ var jpeg = require("jpeg-js");
 var mime = require("mime-types");
 var parseDataURI = require("parse-data-uri");
 var nodeFetch = require("cross-fetch");
-var Buffer= require('buffer').Buffer
 
 
 function handlePNG(data, cb) {
@@ -97,15 +96,15 @@ module.exports = async function getPixels(url, type, cb) {
     try {
 
       const response = await nodeFetch(url);
-      const buffer = await response.buffer();
+      // const buffer = await response.buffer();
   
-      console.log('get-pixels buffer', buffer)
-      const typeOfRes = await fileType.fromBuffer(buffer)
-      console.log('get-pixelstypeOfRes ', typeOfRes)
+      console.log('get-pixels buffer', response)
+      // const typeOfRes = await fileType.fromBuffer(buffer)
+      // console.log('get-pixelstypeOfRes ', typeOfRes)
       
-      if(type, buffer, cb) {
-        doParse(type, buffer, cb);
-      }    
+      // if(type, buffer, cb) {
+      //   doParse(type, buffer, cb);
+      // }    
 
     } catch(err) {
       console.log('get-pixels  err', err)
