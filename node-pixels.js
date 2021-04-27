@@ -8,8 +8,7 @@ var jpeg = require("jpeg-js");
 var mime = require("mime-types");
 var parseDataURI = require("parse-data-uri");
 var nodeFetch = require("cross-fetch");
-var toBuffer = require('blob-to-buffer')
-
+var toBuffer = require("blob-to-buffer");
 
 function handlePNG(data, cb) {
   var png = new PNG();
@@ -95,32 +94,28 @@ module.exports = async function getPixels(url, type, cb) {
     type = type;
 
     try {
-
       const response = await nodeFetch(url);
-      console.log('get-pixels response', response)
+      console.log("get-pixels response", response);
       const blob = await response.blob();
-      console.log('get-pixels blob', blob)
+      console.log("get-pixels blob", blob);
 
       // var resultBlob = new Blob([ new Uint8Array([1, 2, 3]) ], { type: 'application/octet-binary' })
- 
-toBuffer(blob, function (err, buffer) {
-  if (err) throw err
- console.log('parse buffer from blob ', buffer)
-  // buffer[0] // => 1
-  // buffer.readUInt8(1) // => 2
-})
 
-  
+      toBuffer(blob, function (err, buffer) {
+        if (err) throw err;
+        console.log("parse buffer from blob ", buffer);
+        // buffer[0] // => 1
+        // buffer.readUInt8(1) // => 2
+      });
+
       // const typeOfRes = await fileType.fromBuffer(buffer)
       // console.log('get-pixelstypeOfRes ', typeOfRes)
-      
+
       // if(type, buffer, cb) {
       //   doParse(type, buffer, cb);
-      // }    
-
-    } catch(err) {
-      console.log('get-pixels  err', err)
-
+      // }
+    } catch (err) {
+      console.log("get-pixels  err", err);
     }
 
     // nodeFetch(url)
